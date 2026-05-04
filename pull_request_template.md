@@ -1,17 +1,17 @@
-## What was done
+## Что сделано
 
-<!-- Brief description of what was implemented or fixed -->
+<!-- Кратко опиши что реализовано или исправлено -->
 
-## How to verify
+## Как проверить
 
-<!-- Steps to verify the changes -->
+<!-- Шаги для проверки изменений -->
 
 1.
 2.
 
-## Checklist
+## Чеклист
 
-- [ ] CI passes (lint + tests + docker build)
-- [ ] No debug print/console.log left
-- [ ] `.env.example` updated (if new env vars were added)
-- [ ] README updated if needed
+- [ ] CI проходит (lint + tests + docker build)
+- [ ] Нет отладочных print/console.log
+- [ ] `.env.example` обновлён (если добавлены новые переменные)
+- [ ] README обновлён при необходимости
