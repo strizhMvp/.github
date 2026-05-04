@@ -1,41 +1,41 @@
-# Contributing to STRIZH
+# Правила разработки СТРИЖ
 
-## Branch Structure
+## Структура веток
 
 ```
-main  -- production-ready. PR from dev only. Direct push forbidden.
-  dev -- integration branch. PR from feature/fix/chore/refactor only.
-        feature/<name>
-        fix/<name>
-        chore/<name>
-        refactor/<name>
+main  -- production-ready. Только через PR из dev. Прямые пуши запрещены.
+  dev -- интеграционная. Только через PR из feature/fix/chore/refactor.
+        feature/<название>
+        fix/<название>
+        chore/<название>
+        refactor/<название>
 ```
 
-All work happens in a dedicated branch created from `dev`.
+Работа всегда ведётся в отдельной ветке, созданной от `dev`.
 
 ---
 
-## Starting a Task
+## Начало работы над задачей
 
 ```bash
 git checkout dev
 git pull origin dev
-git checkout -b feature/task-name
+git checkout -b feature/название-задачи
 ```
 
 ---
 
-## Branch Naming
+## Именование веток
 
-| Prefix | When to use |
-|--------|-------------|
-| `feature/` | New functionality |
-| `fix/` | Bug fix |
-| `chore/` | Infrastructure, dependencies, config |
-| `refactor/` | Refactoring without behavior change |
-| `docs/` | Documentation |
+| Префикс | Когда использовать |
+|---------|-------------------|
+| `feature/` | Новая функциональность |
+| `fix/` | Исправление бага |
+| `chore/` | Инфра, зависимости, конфиги |
+| `refactor/` | Рефакторинг без изменения поведения |
+| `docs/` | Документация |
 
-Examples:
+Примеры:
 ```
 feature/auth-login-endpoint
 feature/confluence-page-fetch
@@ -45,48 +45,47 @@ chore/docker-compose-setup
 
 ---
 
-## Commits - Conventional Commits
+## Коммиты - Conventional Commits
 
-Format: `<type>(<scope>): <what was done>`
+Формат: `<тип>(<область>): <что сделано>`
 
-| Type | When |
-|------|------|
-| `feat` | New functionality |
-| `fix` | Bug fix |
-| `chore` | Infrastructure, dependencies |
-| `refactor` | Refactoring |
-| `test` | Tests |
-| `docs` | Documentation |
+| Тип | Когда |
+|-----|-------|
+| `feat` | Новая функциональность |
+| `fix` | Исправление бага |
+| `chore` | Инфра, зависимости |
+| `refactor` | Рефакторинг |
+| `test` | Тесты |
+| `docs` | Документация |
 
-Examples:
+Примеры:
 ```
-feat(auth): add JWT login endpoint
-fix(generation): handle empty LLM response
-chore(infra): add MongoDB and Redis to docker-compose
-test(auth): add unit tests for bcrypt hashing
-docs(api): update OpenAPI description for /generate
+feat(auth): добавить эндпоинт JWT-логина
+fix(generation): обработать пустой ответ LLM
+chore(infra): добавить MongoDB и Redis в docker-compose
+test(auth): юнит-тесты для bcrypt-хеширования
 ```
 
 ---
 
-## Pull Request Rules
+## Правила Pull Request
 
-1. PR goes from your branch to **`dev`** (not to `main`)
-2. PR title follows Conventional Commits format
-3. Description: what was done and how to verify
-4. CI must pass: lint + type check + tests + docker build
-5. **1 approval** required from the second developer
+1. PR открывается из твоей ветки в **`dev`** (не в `main`)
+2. Название PR - в формате Conventional Commits
+3. Описание: что сделано и как проверить
+4. CI должен пройти: lint + type check + tests + docker build
+5. Нужен **1 аппрув** от второго разработчика
 6. Merge: **Squash and merge**
-7. Delete branch after merge
+7. После мержа - ветку удалить
 
 ---
 
-## Merging dev into main
+## Merge dev в main
 
-- PR with approval only
-- **Merge commit** (not squash) - preserves history
-- Only after testing on dev environment
-- Tag the version: `v0.1.0`, `v0.2.0`, etc.
+- Только через PR с аппрувом
+- **Merge commit** (не squash) - сохраняет историю
+- Только после тестирования на dev-окружении
+- Ставим тег версии: `v0.1.0`, `v0.2.0`, ...
 
 ```bash
 git tag v0.1.0
@@ -95,26 +94,26 @@ git push origin v0.1.0
 
 ---
 
-## Hotfix - urgent production fix
+## Hotfix - срочный фикс в продакшне
 
 ```bash
 git checkout main
 git pull origin main
-git checkout -b hotfix/problem-description
+git checkout -b hotfix/описание-проблемы
 
-# Fix, commit, push
-git push origin hotfix/problem-description
+# Фиксишь, коммитишь, пушишь
+git push origin hotfix/описание-проблемы
 
-# Open PR to main (with approval)
-# After merging to main -- MUST also merge into dev
+# Открываешь PR в main (с аппрувом)
+# После мержа в main - ОБЯЗАТЕЛЬНО мержишь и в dev
 ```
 
 ---
 
-## Prohibited
+## Что запрещено
 
-- Direct push to `main` or `dev`
-- `git push --force` to `main` or `dev`
-- Merge without approval
-- Merge when CI fails
-- Committing secrets, passwords, `.env` files
+- Прямой пуш в `main` или `dev`
+- `git push --force` в `main` или `dev`
+- Мерж без аппрува
+- Мерж при упавшем CI
+- Коммит секретов, паролей, `.env` файлов
