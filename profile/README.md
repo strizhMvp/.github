@@ -1,28 +1,26 @@
-# STRIZH
+# СТРИЖ
 
-QA Test Case Generator - AI assistant for QA teams.
-
-Generates manual test cases from Confluence specifications and pushes them to Jira Xray Data Center.
+**AI-ассистент для QA-команд** — генерирует manual-тест-кейсы по спецификациям из Confluence и пушит их в Jira Xray Data Center.
 
 ---
 
-## Repositories
+## Репозитории
 
-| Repository | Description |
-|------------|-------------|
-| [strizh-auth-service](../strizh-auth-service) | Authentication, users, JWT, profile |
-| [strizh-generation-service](../strizh-generation-service) | Test case generation, LLM orchestration, history |
-| [strizh-integration-service](../strizh-integration-service) | Confluence + Jira + Xray adapters |
-| [strizh-admin-service](../strizh-admin-service) | Templates, prompts, settings, logs |
-| [strizh-infra](../strizh-infra) | Docker Compose, K8s manifests, nginx |
-| strizh-frontend *(soon)* | React + TypeScript UI |
+| Репозиторий | Описание |
+|-------------|----------|
+| [strizh-auth-service](../strizh-auth-service) | Аутентификация, пользователи, JWT, профиль |
+| [strizh-generation-service](../strizh-generation-service) | Генерация тест-кейсов, LLM-оркестрация, история |
+| [strizh-integration-service](../strizh-integration-service) | Confluence + Jira + Xray адаптеры |
+| [strizh-admin-service](../strizh-admin-service) | Шаблоны, промпты, настройки, логи |
+| [strizh-infra](../strizh-infra) | Docker Compose, K8s манифесты, nginx |
+| strizh-frontend *(скоро)* | React + TypeScript UI |
 
 ---
 
-## Tech Stack
+## Технологический стек
 
 **Backend:** Python 3.14 / FastAPI / MongoDB / Redis
 
 **Frontend:** React 18 / TypeScript / Vite
 
-**Infrastructure:** Docker / nginx / k3d / K8s
+**Инфраструктура:** Docker / nginx / k3d / K8s
