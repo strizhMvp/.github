@@ -26,7 +26,7 @@
 | [strizh-integration-service](https://github.com/strizhMvp/strizh-integration-service) | Адаптеры к Confluence DC, Jira DC, Xray DC |
 | [strizh-admin-service](https://github.com/strizhMvp/strizh-admin-service) | Шаблоны, промпты, настройки LLM, логи |
 | [strizh-infra](https://github.com/strizhMvp/strizh-infra) | Docker Compose, K8s-манифесты, nginx, seed-скрипты |
-| strizh-frontend *(в разработке)* | React 18 + TypeScript UI |
+| [strizh-frontend](https://github.com/strizhMvp/strizh-frontend) | React 18 + TypeScript UI |
 
 ---
 
