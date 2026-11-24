@@ -53,15 +53,14 @@ Orca/Codex, а не фиктивной AI-проверкой GitHub Actions.
 До мержа оба независимых результата должны быть `pass`; `needs_changes` или `blocked`
 оставляют соответствующий gate открытым.
 
-По умолчанию нужен аппрув второго разработчика; локальный self-check и независимые
-вердикты сами по себе его не заменяют. Исключение владельца вместо формального
-GitHub-аппрува действует только для существующих dev PR `strizh-shared#41`,
-`strizh-auth-service#78`, `strizh-monitoring-service#23`, `strizh-admin-service#41`,
-`strizh-generation-service#212`, `strizh-integration-service#69`,
-`strizh-pipeline-service#28`; актуальные два независимых результата в PR обязательны.
-Новые frontend/infra dev PR, общий `.github` main PR и последующие delivery main PR
-требуют обычного аппрува либо нового явного адресного решения владельца.
-Разрешение production effect не является исключением из approval/release/ИБ.
+В команде только владелец и помощник — решение владельца от 24.11.2026.
+Отдельный второй разработчик и формальный GitHub-аппрув не требуются.
+Приёмку выполняет владелец: порученный и разрешённый им scope допускается мержить
+после релевантных локальных проверок, двух независимых `pass` и закрытия P0/P1.
+Запрос владельца и разрешённый объём записываются в PR; локальный self-check
+не заменяет независимые вердикты. Не выдумывать approval другого человека.
+Нельзя обходить branch protection или выдавать `blocked`/`needs_changes` за `pass`.
+Разрешение production effect и согласование release/ИБ сохраняются отдельно.
 
 Существующие локальные pytest/ruff/mypy/tenant guard и live golden/eval команды
 сохранены в [CONTRIBUTING.md](CONTRIBUTING.md). Не добавлять runner или фиктивный
